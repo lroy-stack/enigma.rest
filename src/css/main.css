@@ -88,7 +88,7 @@ a, a:hover {
 }
 
 .special-title-2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cigatte', serif;
   text-transform: uppercase;
   margin-bottom: 2.8rem;
   font-size: 2.8rem;
@@ -102,39 +102,25 @@ a, a:hover {
   position: relative;
   margin: 0 auto;
   display: block;
-  width: 235px;
-  height: 60px;
-  border: 1px solid #003166;
+  width: 235px; /* Puedes ajustar el ancho según necesites */
+  height: 60px; /* Puedes ajustar la altura según necesites */
   text-align: center;
-  color: #fff;
-  background: #003D7F;
-  border-radius: 4px;
-  box-shadow: 0 0 30px rgba(0,0,0,.15) inset, 0 6px 10px rgba(0,0,0,.15);
+  background: url('https://res.cloudinary.com/dmkfycwpf/image/upload/v1706703516/zafironew_bhqisu.svg') no-repeat center center;
+  background-size: cover; /* Cambiado de 'cover' a 'contain' para ajustar el SVG */
+  text-shadow: 2px 2px 4px rgba(0,0,0,.5); /* Sombra para el texto */
+
+  /* Eliminando bordes y sombras */
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
+/* Estilos para ::before y ::after eliminados */
 .banner::before, .banner::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  left: -37px;
-  top: 24px;
-  display: block;
-  width: 60px;
-  height: 0px;
-  border: 30px solid #003D7F;
-  border-right: 20px solid #001933;
-  border-bottom-color: #003166;
-  border-left-color: transparent;
-  transform: rotate(-5deg);
+  display: none;
 }
 
-.banner::after {
-  left: auto;
-  right: -37px;
-  border-left: 20px solid #001933;
-  border-right: 30px solid transparent;
-  transform: rotate(5deg);
-}
+
 
 .box-shadow {
   box-shadow: 0 0.28rem 0.78rem rgba(0, 0, 0, .05);
@@ -184,8 +170,24 @@ a, a:hover {
   top: 0;
 }
 
+.btn.btn-light {
+  background-color: transparent; /* Fondo transparente por defecto */
+  color: #ffffff; /* Texto en blanco por defecto */
+  border: 2px solid #ffffff; /* Borde blanco por defecto */
+  /* Otras propiedades de estilo por defecto */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.btn.btn-light:hover {
+  background-color: #ffffff; /* Fondo blanco al pasar el ratón */
+  color: #000000; /* Texto negro al pasar el ratón */
+  /* Otras propiedades de estilo al pasar el ratón */
+}
+
+
+
 .brand-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Calathea', sans-serif;
   text-transform: uppercase; /* Convierte el texto a mayúsculas */
   font-size: calc(50px + (120 - 50) * (100vw - 320px)/(2560 - 320));
   /* Otros estilos si los necesitas */
@@ -197,6 +199,8 @@ a, a:hover {
   /* font size = min font size + (max font size - min font size) * (100vw - min viewport size) / (max viewport size - min viewport size) */
   font-size: calc(16px + (40 - 16) * (100vw - 320px)/(2560 - 320));
 }
+
+
 
 /*
  * HOMEPAGE-MENU
@@ -245,24 +249,6 @@ a, a:hover {
   margin: 0 auto 2.8rem;
 }
 
-/* 
- * HOMEPAGE-SPECIALS & EVENTS
- */
-
-.homepage-special-offers {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
-
-.card-2, .card-3 {
-  margin-top: 2.8rem;
-}
-
-.top-right {
-  position: absolute;
-  top: 8px;
-  right: 16px;
-}
 
 /* 
  * HOMEPAGE-TESTIMONIALS
@@ -343,7 +329,7 @@ a, a:hover {
 .page-footer-copyright {
   position: relative;
   z-index: 2;
-  background: #003D7F;
+  background: #0d7a8dc1;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
@@ -389,7 +375,7 @@ a, a:hover {
   display: inline-block;
   width: 40px;
   height: 40px;
-  background-color: #007bff;
+  background-color: #9f7b0f;
   transition: all 0.3s ease-in-out;
   text-align: center;
   line-height: 47px;
@@ -397,7 +383,7 @@ a, a:hover {
 }
 
 .footer-social:hover {
-  background-color: #0069d9;
+  background-color: #0D798D;
   transform: scale(1.1) rotate(360deg);
 }
 
@@ -487,9 +473,9 @@ a, a:hover {
 }
 
 .about-history-title h3, .about-job-openings-title h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cigatte', serif;
   margin-bottom: 1rem;
-  color: #007bff;
+  color: #0D798D;
   font-size: 1.8rem;
 }
 
@@ -698,6 +684,10 @@ a, a:hover {
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between; /* Para alinear nombre y precio */
+  align-items: center;
 }
 
 .food-title:before {
@@ -732,7 +722,7 @@ a, a:hover {
 }
 
 /*
- * DRINKS MENU
+ * MENUS
  */
 
 .drinks-jumbotron {
@@ -817,7 +807,7 @@ a, a:hover {
 }
 
 /*
- * DESSERTS MENU
+ * BEBIDAS
  */
 
 .desserts-jumbotron {
@@ -905,84 +895,6 @@ a, a:hover {
   margin: 0;
 }
 
-/*
- * ALBUM
- */
-
-.album-description {
-  background: #003d7f;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  text-align: center;
-}
-
-.album-description h2 {
-  margin-bottom: 0;
-}
-
-.album-content {
-  padding-top: 8rem;
-  padding-bottom: 2.8rem;
-}
-
-.album-content .card {
-  margin-bottom: 2.8rem;
-}
-
-/*
- * GALLERY
- */
-
-.gallery-description {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  text-align: center;
-  background: white;
-}
-
-.gallery-description h2 {
-  margin-bottom: 0;
-}
-
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 1100;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  background: black;
-  color: grey;
-}
-
-.lightbox label {
-  position: absolute;
-  cursor: pointer;
-  top: 10px;
-  right: 25px;
-  font-size: 2.8rem;
-}
-
-.lightbox-content {
-  max-width: 800px;
-  width: 80%;
-  /* Horizontal & Vertical Centering */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
-
-.gallery-thumbnails {
-  padding-top: 8rem;
-  padding-bottom: 2.8rem;
-}
-
-.gallery-thumbnails .col-md-4 {
-  margin-bottom: 2.8rem;
-}
 
 /* CSS ANIMATIONS */
 .navbar-brand.animated {
@@ -994,6 +906,8 @@ a, a:hover {
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
+
+
 
 /*
  * MEDIA QUERIES
@@ -1039,7 +953,7 @@ a, a:hover {
   .page-footer-title::before {
     content: '';
     width: 30px;
-    border-top: #007bff;
+    border-top: #916a00;
     border-top-style: solid;
     border-top-width: 3px;
     display: block;
@@ -1099,3 +1013,6 @@ a, a:hover {
     max-width: 30px;
   }
 }
+
+
+
