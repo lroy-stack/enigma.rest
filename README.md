@@ -1,66 +1,36 @@
- 🍽️ Enigma Restaurant — Production Build
+# enigma.rest — first working copy of my first website
 
- **[ES]** Build de producción del sitio web oficial del restaurante Enigma en Calpe, España. Versión optimizada con assets compilados y comprimidos lista para deploy.
+**Live:** https://lroy-stack.github.io/enigma.rest/src/
 
- **[EN]** Production build of the official Enigma restaurant website in Calpe, Spain. Optimized version with compiled and minified assets, ready for deployment.
+The first working copy (January–April 2024) of [`Enigma`](https://github.com/lroy-stack/Enigma), the website I built
+by hand for the Enigma restaurant in Calpe (Spain) before AI coding tools. It starts from the free Grecko Bootstrap
+template (MIT, © 2019 Marios Sofokleous, see `LICENSE`) and adds a Grunt pipeline to purify and minify CSS, uglify
+JavaScript, inline critical CSS and minify HTML.
 
- 🔗 **Live site:** [lroy-stack.github.io/Enigma](https://lroy-stack.github.io/Enigma/)
+The restaurant's pages live in `src/`. The `dist/` and `docs/` folders still hold a build of the original template,
+made before the customisation, so they do not show the Enigma site.
 
- ---
+## Build
 
- ## ✨ Features / Características
+```bash
+git clone https://github.com/lroy-stack/enigma.rest.git
+cd enigma.rest
+npm install
+bash script.sh   # rebuilds dist/ and docs/ from src/
+npx serve dist
+```
 
- - 🍷 **Interactive digital menu** — Full drinks & food catalog with custom SVG icons
- - - 📸 **Responsive gallery** — Multi-resolution images (1x–4x) with lazy loading
-   - - 📅 **Reservation system** — Integrated booking form
-     - - 📱 **PWA ready** — Installable progressive web app
-       - - ⚡ **Optimized** — Minified CSS/JS, compressed media assets
-        
-         - ---
+## Layout
 
-         ## 🛠️ Tech Stack
+```
+src/           the Enigma pages, styles, scripts and media
+dist/, docs/   build output (currently the original template's build)
+script.sh      build script that runs the Grunt tasks
+Gruntfile.js   Grunt configuration
+```
 
-         | Layer | Technology |
-         |-------|-----------|
-         | Markup | HTML5 |
-         | Styles | CSS3 (minified) |
-         | Scripts | Vanilla JavaScript (ES6+) |
-         | Build tool | Grunt |
-         | Images | Responsive srcset (1x–4x) |
+---
 
-         ---
-
-         ## 📁 Structure / Estructura
-
-         ```
-         enigma.rest/
-         ├── dist/               # Production build output
-         │   ├── index.html
-         │   ├── css/            # Compiled styles
-         │   ├── js/             # Minified scripts
-         │   └── media/          # Optimized images & icons
-         ├── Gruntfile.js        # Build configuration
-         └── README.md
-         ```
-
-         ---
-
-         ## 🚀 Deploy
-
-         ```bash
-         git clone https://github.com/lroy-stack/enigma.rest.git
-         cd enigma.rest
-         # Serve the dist folder
-         npx serve dist
-         ```
-
-         ---
-
-         ## 👨‍💻 Author
-
-         **Leroy** · [lroy-stack](https://github.com/lroy-stack)
-         Full-stack developer specialized in hospitality digital solutions · Calpe, España 🇪🇸
-
-         ---
-
-         *Production version of [lroy-stack/Enigma](https://github.com/lroy-stack/Enigma) — Proyecto Enigma digital transformation.*
+Versión en español: primera copia de trabajo (enero–abril de 2024) de mi primera web, hecha a mano para el
+restaurante Enigma de Calpe sobre la plantilla libre Grecko (MIT). La web está en `src/`; `dist/` y `docs/` aún
+contienen el build de la plantilla original.
